@@ -1,105 +1,49 @@
 :root {
 --vp-c-brand-1: #39ff4d;
---vp-c-brand-2: #52ff64;
---vp-c-brand-3: #2ae83e;
+--vp-c-brand-2: #55ff66;
+--vp-c-brand-3: #22dd44;
 }
 
 .VPHome {
 background:
-radial-gradient(circle at top right,
+radial-gradient(
+circle at top right,
 rgba(57,255,77,.12),
-transparent 30%),
-radial-gradient(circle at bottom left,
+transparent 35%
+),
+radial-gradient(
+circle at bottom left,
 rgba(57,255,77,.08),
-transparent 25%);
+transparent 30%
+);
 }
 
-.wiki-hero {
-text-align: center;
-padding: 80px 0;
+.VPHero .name {
+color: #39ff4d !important;
 }
 
-.wiki-subtitle {
-color: #39ff4d;
-font-size: 18px;
-font-weight: 600;
+.VPHero .text {
+font-size: 72px !important;
+font-weight: 800 !important;
 }
 
-.wiki-hero h1 {
-font-size: 72px;
-line-height: 1;
-margin: 0;
-color: white;
+.VPHero .tagline {
+max-width: 700px !important;
+margin: 0 auto !important;
 }
 
-.wiki-hero p {
-max-width: 700px;
-margin: 20px auto;
-color: #9ca3af;
-}
-
-.wiki-buttons {
-display: flex;
-gap: 12px;
-justify-content: center;
-margin-top: 24px;
-}
-
-.card-grid {
-display: grid;
-grid-template-columns: repeat(3,1fr);
-gap: 16px;
-margin-top: 30px;
-}
-
-.wiki-card {
-padding: 24px;
+.VPFeature {
 border: 1px solid rgba(255,255,255,.08);
-border-radius: 16px;
 background: rgba(255,255,255,.03);
-text-decoration: none;
-transition: .2s;
+backdrop-filter: blur(12px);
+transition: .2s ease;
 }
 
-.wiki-card:hover {
-border-color: #39ff4d;
+.VPFeature:hover {
+border-color: rgba(57,255,77,.5);
 transform: translateY(-2px);
 }
 
-.wiki-card h3 {
-margin: 12px 0 8px;
-color: white;
-}
-
-.wiki-card p {
-color: #9ca3af;
-}
-
-.section-grid {
-display: grid;
-grid-template-columns: repeat(4,1fr);
-gap: 16px;
-margin-top: 30px;
-}
-
-.section-card {
-padding: 24px;
-border-radius: 16px;
-border: 1px solid rgba(255,255,255,.08);
-background: rgba(255,255,255,.03);
-}
-
-.section-card h3 {
-color: #39ff4d;
-}
-
-@media (max-width: 960px) {
-.card-grid,
-.section-grid {
-grid-template-columns: 1fr;
-}
-
-.wiki-hero h1 {
-font-size: 48px;
-}
+.VPButton.brand {
+box-shadow: 0 0 20px rgba(57,255,77,.25);
 }

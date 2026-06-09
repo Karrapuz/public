@@ -3,14 +3,9 @@
 layout: home
 
 hero:
-name: "Amnezia"
-text: "Wiki"
-tagline: >
-Документация по настройке VPN, управлению серверами
-и использованию сервисов Amnezia.
-image:
-src: /logo.svg
-alt: Amnezia
+name: Amnezia
+text: Wiki
+tagline: Документация по настройке VPN, управлению серверами и использованию сервисов Amnezia.
 
 actions:
 - theme: brand
@@ -25,28 +20,22 @@ link: /getting-started/
 
 features:
 
-* icon: 🚀
-  title: Начало работы
-  details: Создание аккаунта, первый VPN и подключение устройств
+* title: 🚀 Начало работы
+  details: Создание аккаунта и первый VPN
 
-* icon: 🔒
-  title: VPN
-  details: AmneziaWG, WireGuard, OpenVPN и другие протоколы
+* title: 🔒 VPN
+  details: AmneziaWG, WireGuard и OpenVPN
 
-* icon: 🌍
-  title: Hosting
-  details: Управление VPS, SSH, резервные копии и безопасность
+* title: 🌍 Hosting
+  details: Управление VPS и серверами
 
-* icon: 📱
-  title: Приложения
-  details: Windows, macOS, Linux, Android и iOS
+* title: 📱 Приложения
+  details: Windows, Linux, Android и iOS
 
-* icon: 🛠️
-  title: Решение проблем
-  details: Частые ошибки и способы их устранения
+* title: 🛠 Поддержка
+  details: Решение распространённых проблем
 
-* icon: 📚
-  title: FAQ
+* title: 📚 FAQ
   details: Ответы на популярные вопросы
 
 ---

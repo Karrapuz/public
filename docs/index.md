@@ -2,257 +2,314 @@
 layout: page
 ---
 
-<style scoped>
-/* Стили только для главной страницы */
-.main-page {
-  max-width: 1400px;
+<style>
+/* ПАСТЕЛЬНЫЕ ЦВЕТА + ПРОЗРАЧНОСТЬ */
+:root {
+  --amnezia-pastel-orange: #ffb347;
+  --amnezia-pastel-green: #a8e6cf;
+  --amnezia-soft-green: #c8e6d9;
+  --amnezia-dark: #1a1a1a;
+  --amnezia-glass: rgba(26, 26, 26, 0.7);
+}
+
+* {
+  box-sizing: border-box;
+}
+
+/* ОСНОВНОЙ КОНТЕЙНЕР */
+.main-container {
+  max-width: 1200px;
   margin: 0 auto;
-  padding: 2rem;
+  padding: 2rem 1.5rem;
 }
 
-/* Hero секция */
-.hero-section {
+/* HERO СЕКЦИЯ */
+.hero-pastel {
   text-align: center;
-  padding: 4rem 2rem;
-  background: linear-gradient(135deg, rgba(255,107,0,0.1), rgba(0,230,118,0.05));
-  border-radius: 48px;
+  padding: 3rem 2rem;
+  background: rgba(168, 230, 207, 0.15);
+  backdrop-filter: blur(12px);
+  border-radius: 32px;
   margin-bottom: 3rem;
-  backdrop-filter: blur(10px);
-  border: 1px solid rgba(255,107,0,0.3);
+  border: 1px solid rgba(168, 230, 207, 0.3);
 }
 
-.hero-section h1 {
-  font-size: 3.5rem;
-  background: linear-gradient(135deg, #ff6b00, #00e676);
+.hero-pastel h1 {
+  font-size: 3rem;
+  margin-bottom: 1rem;
+  background: linear-gradient(135deg, var(--amnezia-pastel-orange), var(--amnezia-pastel-green));
   background-clip: text;
   -webkit-background-clip: text;
   color: transparent;
-  margin-bottom: 1rem;
 }
 
-.badge {
+.badge-pastel {
   display: inline-block;
-  background: rgba(255,107,0,0.2);
+  background: rgba(168, 230, 207, 0.2);
+  backdrop-filter: blur(4px);
   padding: 0.3rem 1rem;
   border-radius: 50px;
   font-size: 0.85rem;
-  color: #ff6b00;
-  margin: 0.5rem;
+  margin: 0.25rem;
+  color: #a8e6cf;
+  border: 1px solid rgba(168, 230, 207, 0.3);
 }
 
-/* Секция быстрых ссылок */
-.quick-links {
+/* СЕТКА КАРТОЧЕК */
+.cards-grid {
   display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+  grid-template-columns: repeat(4, 1fr);
   gap: 1.5rem;
-  margin-bottom: 3rem;
+  margin: 3rem 0;
 }
 
-.quick-card {
-  background: rgba(10,10,10,0.6);
+.pastel-card {
+  background: rgba(26, 26, 26, 0.6);
   backdrop-filter: blur(12px);
-  border: 1px solid rgba(255,107,0,0.3);
-  border-radius: 24px;
+  border: 1px solid rgba(168, 230, 207, 0.3);
+  border-radius: 20px;
   padding: 1.5rem;
   transition: all 0.3s ease;
-  cursor: pointer;
   text-decoration: none;
   display: block;
 }
 
-.quick-card:hover {
+.pastel-card:hover {
   transform: translateY(-5px);
-  border-color: #00e676;
-  box-shadow: 0 0 30px rgba(0,230,118,0.2);
+  border-color: var(--amnezia-pastel-green);
+  box-shadow: 0 8px 25px rgba(168, 230, 207, 0.15);
+  background: rgba(168, 230, 207, 0.1);
 }
 
-.quick-card .icon {
-  font-size: 2.5rem;
+.card-icon {
+  font-size: 2.2rem;
   margin-bottom: 1rem;
 }
 
-.quick-card h3 {
+.pastel-card h3 {
   margin: 0 0 0.5rem 0;
-  color: #ff6b00;
+  color: var(--amnezia-pastel-orange);
+  font-size: 1.3rem;
 }
 
-.quick-card p {
+.pastel-card p {
   margin: 0;
   font-size: 0.9rem;
   opacity: 0.8;
+  color: #ddd;
 }
 
-/* Секция категорий */
-.categories {
+/* СЕТКА КАТЕГОРИЙ (4 колонки) */
+.categories-four {
   display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
-  gap: 2rem;
-  margin-bottom: 3rem;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 1.5rem;
+  margin: 3rem 0;
 }
 
-.category {
-  background: rgba(0,0,0,0.4);
-  border-radius: 32px;
+.category-pastel {
+  background: rgba(26, 26, 26, 0.5);
+  backdrop-filter: blur(10px);
+  border-radius: 24px;
   padding: 1.5rem;
-  border: 1px solid rgba(255,107,0,0.2);
+  border: 1px solid rgba(168, 230, 207, 0.2);
+  transition: all 0.2s;
 }
 
-.category h2 {
-  font-size: 1.5rem;
-  margin-bottom: 1.5rem;
-  border-left: 4px solid #ff6b00;
-  padding-left: 1rem;
+.category-pastel:hover {
+  border-color: rgba(168, 230, 207, 0.5);
+  background: rgba(168, 230, 207, 0.05);
 }
 
-.category ul {
+.category-pastel h2 {
+  font-size: 1.3rem;
+  margin-bottom: 1.2rem;
+  border-left: 3px solid var(--amnezia-pastel-green);
+  padding-left: 0.8rem;
+  color: var(--amnezia-pastel-orange);
+}
+
+.category-pastel ul {
   list-style: none;
   padding: 0;
+  margin: 0;
 }
 
-.category li {
+.category-pastel li {
   margin: 0.8rem 0;
 }
 
-.category a {
+.category-pastel a {
   display: flex;
   align-items: center;
-  gap: 0.75rem;
-  padding: 0.75rem;
-  border-radius: 16px;
+  gap: 0.6rem;
+  padding: 0.6rem;
+  border-radius: 12px;
   transition: all 0.2s;
   text-decoration: none;
-  color: inherit;
+  color: #e0e0e0;
+  font-size: 0.9rem;
 }
 
-.category a:hover {
-  background: rgba(255,107,0,0.15);
+.category-pastel a:hover {
+  background: rgba(168, 230, 207, 0.15);
   transform: translateX(5px);
+  color: var(--amnezia-pastel-green);
 }
 
-/* Статистика */
-.stats {
+/* СТАТИСТИКА */
+.stats-four {
   display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+  grid-template-columns: repeat(4, 1fr);
   gap: 1.5rem;
   margin: 3rem 0;
-  text-align: center;
 }
 
-.stat-item {
-  background: rgba(255,107,0,0.1);
-  border-radius: 24px;
-  padding: 1.5rem;
+.stat-pastel {
+  background: rgba(168, 230, 207, 0.08);
   backdrop-filter: blur(8px);
+  border-radius: 20px;
+  padding: 1.5rem;
+  text-align: center;
+  border: 1px solid rgba(168, 230, 207, 0.2);
 }
 
-.stat-number {
-  font-size: 2.5rem;
+.stat-number-pastel {
+  font-size: 2rem;
   font-weight: bold;
-  background: linear-gradient(135deg, #ff6b00, #00e676);
+  background: linear-gradient(135deg, var(--amnezia-pastel-orange), var(--amnezia-pastel-green));
   background-clip: text;
   -webkit-background-clip: text;
   color: transparent;
+  margin-bottom: 0.3rem;
 }
 
-/* Баннер */
-.cta-banner {
-  background: linear-gradient(135deg, rgba(255,107,0,0.2), rgba(0,230,118,0.1));
-  border-radius: 32px;
-  padding: 2.5rem;
+.stat-label {
+  font-size: 0.9rem;
+  color: #ccc;
+}
+
+.stat-sub {
+  font-size: 0.75rem;
+  opacity: 0.6;
+  display: block;
+  margin-top: 0.3rem;
+}
+
+/* CTA БАННЕР */
+.cta-pastel {
+  background: linear-gradient(135deg, rgba(168, 230, 207, 0.12), rgba(255, 179, 71, 0.08));
+  backdrop-filter: blur(10px);
+  border-radius: 28px;
+  padding: 2rem;
   text-align: center;
-  margin-top: 2rem;
-  border: 1px solid rgba(255,107,0,0.4);
+  margin: 3rem 0;
+  border: 1px solid rgba(168, 230, 207, 0.3);
 }
 
-.cta-buttons {
-  display: flex;
-  gap: 1rem;
-  justify-content: center;
-  flex-wrap: wrap;
-  margin-top: 1.5rem;
+.cta-pastel h3 {
+  margin: 0 0 0.8rem 0;
+  color: var(--amnezia-pastel-orange);
+  font-size: 1.5rem;
 }
 
-.btn {
-  padding: 0.75rem 1.5rem;
+.btn-pastel-primary {
+  background: rgba(168, 230, 207, 0.2);
+  backdrop-filter: blur(4px);
+  border: 1px solid var(--amnezia-pastel-green);
+  color: var(--amnezia-pastel-green);
+  padding: 0.7rem 1.5rem;
   border-radius: 50px;
   text-decoration: none;
-  font-weight: bold;
+  display: inline-block;
+  margin: 0.5rem;
   transition: all 0.3s;
 }
 
-.btn-primary {
-  background: #ff6b00;
-  color: black;
+.btn-pastel-primary:hover {
+  background: rgba(168, 230, 207, 0.3);
+  transform: scale(1.02);
+  box-shadow: 0 4px 15px rgba(168, 230, 207, 0.2);
 }
 
-.btn-primary:hover {
-  background: #00e676;
-  transform: scale(1.05);
+.btn-pastel-secondary {
+  background: rgba(26, 26, 26, 0.6);
+  backdrop-filter: blur(4px);
+  border: 1px solid rgba(255, 179, 71, 0.5);
+  color: var(--amnezia-pastel-orange);
+  padding: 0.7rem 1.5rem;
+  border-radius: 50px;
+  text-decoration: none;
+  display: inline-block;
+  margin: 0.5rem;
+  transition: all 0.3s;
 }
 
-.btn-secondary {
-  border: 2px solid #ff6b00;
-  color: #ff6b00;
+.btn-pastel-secondary:hover {
+  border-color: var(--amnezia-pastel-orange);
+  background: rgba(255, 179, 71, 0.1);
 }
 
-.btn-secondary:hover {
-  border-color: #00e676;
-  color: #00e676;
+/* АДАПТИВНОСТЬ */
+@media (max-width: 1024px) {
+  .cards-grid, .categories-four, .stats-four {
+    grid-template-columns: repeat(2, 1fr);
+  }
+}
+
+@media (max-width: 640px) {
+  .cards-grid, .categories-four, .stats-four {
+    grid-template-columns: 1fr;
+  }
+  
+  .hero-pastel h1 {
+    font-size: 2rem;
+  }
 }
 </style>
 
-<div class="main-page">
+<div class="main-container">
 
-  <!-- Hero секция -->
-  <div class="hero-section">
+  <!-- HERO БЛОК -->
+  <div class="hero-pastel">
     <div>
-      <span class="badge">🚀 Современный хостинг</span>
-      <span class="badge">🔐 Безопасность</span>
-      <span class="badge">💚 Amnezia Ready</span>
+      <span class="badge-pastel">🌿 Современный хостинг</span>
+      <span class="badge-pastel">🔐 Безопасность</span>
+      <span class="badge-pastel">💚 Amnezia Ready</span>
+      <span class="badge-pastel">⚡ NVMe диски</span>
     </div>
     <h1>🖤 Amnezia Hosting Wiki 🧡</h1>
-    <p style="font-size: 1.2rem; opacity: 0.9;">
-      Быстрый старт, гайды и лучшие практики для вашего проекта
-    </p>
+    <p style="font-size: 1.1rem; opacity: 0.85;">Быстрый старт, гайды и лучшие практики для вашего проекта</p>
   </div>
 
-  <!-- Быстрые ссылки (главные руководства) -->
-  <div class="quick-links">
-    <a href="/guides/quickstart" class="quick-card">
-      <div class="icon">⚡</div>
+  <!-- БЫСТРЫЕ ССЫЛКИ (4 карточки) -->
+  <div class="cards-grid">
+    <a href="/docs/quickstart" class="pastel-card">
+      <div class="card-icon">⚡</div>
       <h3>Быстрый старт</h3>
-      <p>Настройте ваш сервер за 5 минут</p>
+      <p>Настройте сервер за 5 минут</p>
     </a>
-    <a href="/guides/installation" class="quick-card">
-      <div class="icon">🛠️</div>
+    <a href="/docs/installation" class="pastel-card">
+      <div class="card-icon">🛠️</div>
       <h3>Установка</h3>
       <p>Пошаговая инструкция</p>
     </a>
-    <a href="/guides/security" class="quick-card">
-      <div class="icon">🔒</div>
+    <a href="/docs/security" class="pastel-card">
+      <div class="card-icon">🔒</div>
       <h3>Безопасность</h3>
       <p>Защита вашего хостинга</p>
     </a>
-    <a href="/guides/amnezia" class="quick-card">
-      <div class="icon">💚</div>
-      <h3>Amnezia VPN</h3>
-      <p>Настройка с Amnezia протоколами</p>
+    <a href="/docs/server" class="pastel-card">
+      <div class="card-icon">🔧</div>
+      <h3>Настройки</h3>
+      <p>Оптимальная конфигурация</p>
     </a>
   </div>
 
-  <!-- Категории руководств -->
-  <div class="categories">
-    <div class="category">
-      <h2>🚀 Начало работы</h2>
-      <ul>
-        <li><a href="/guides/registration">📝 Регистрация аккаунта</a></li>
-        <li><a href="/guides/domain">🌐 Подключение домена</a></li>
-        <li><a href="/guides/ssl">🔐 Бесплатный SSL (Let's Encrypt)</a></li>
-        <li><a href="/guides/backups">💾 Настройка бэкапов</a></li>
-      </ul>
-    </div>
-
-    <div class="category">
+  <!-- КАТЕГОРИИ (4 колонки - ваш код) -->
+  <div class="categories-four">
+    
+    <div class="category-pastel">
       <h2>⚙️ Управление сервером</h2>
       <ul>
         <li><a href="/guides/panel">🖥️ Панель управления</a></li>
@@ -262,7 +319,7 @@ layout: page
       </ul>
     </div>
 
-    <div class="category">
+    <div class="category-pastel">
       <h2>💚 Amnezia Интеграция</h2>
       <ul>
         <li><a href="/guides/wireguard">🔷 Настройка WireGuard</a></li>
@@ -272,7 +329,7 @@ layout: page
       </ul>
     </div>
 
-    <div class="category">
+    <div class="category-pastel">
       <h2>🔧 Продвинутые гайды</h2>
       <ul>
         <li><a href="/guides/docker">🐳 Docker на хостинге</a></li>
@@ -281,36 +338,50 @@ layout: page
         <li><a href="/guides/scale">📈 Масштабирование</a></li>
       </ul>
     </div>
+
+    <div class="category-pastel">
+      <h2>🚀 Начало работы</h2>
+      <ul>
+        <li><a href="/guides/registration">📝 Регистрация</a></li>
+        <li><a href="/guides/domain">🌐 Подключение домена</a></li>
+        <li><a href="/guides/ssl">🔐 SSL сертификат</a></li>
+        <li><a href="/guides/backups">💾 Настройка бэкапов</a></li>
+      </ul>
+    </div>
+
   </div>
 
-  <!-- Статистика/Факты -->
-  <div class="stats">
-    <div class="stat-item">
-      <div class="stat-number">99.9%</div>
-      <div>Аптайм</div>
-      <small style="opacity: 0.7;">гарантируем стабильность</small>
+  <!-- СТАТИСТИКА -->
+  <div class="stats-four">
+    <div class="stat-pastel">
+      <div class="stat-number-pastel">99.9%</div>
+      <div class="stat-label">Аптайм</div>
+      <span class="stat-sub">гарантия стабильности</span>
     </div>
-    <div class="stat-item">
-      <div class="stat-number">24/7</div>
-      <div>Поддержка</div>
-      <small style="opacity: 0.7;">в Telegram и Discord</small>
+    <div class="stat-pastel">
+      <div class="stat-number-pastel">24/7</div>
+      <div class="stat-label">Поддержка</div>
+      <span class="stat-sub">Telegram · Discord</span>
     </div>
-    <div class="stat-item">
-      <div class="stat-number">🚀</div>
-      <div>NVMe диски</div>
-      <small style="opacity: 0.7;">молниеносная скорость</small>
+    <div class="stat-pastel">
+      <div class="stat-number-pastel">🚀</div>
+      <div class="stat-label">NVMe диски</div>
+      <span class="stat-sub">молниеносно</span>
+    </div>
+    <div class="stat-pastel">
+      <div class="stat-number-pastel">🔐</div>
+      <div class="stat-label">DDoS защита</div>
+      <span class="stat-sub">круглосуточно</span>
     </div>
   </div>
 
-  <!-- Баннер с действием -->
-  <div class="cta-banner">
-    <h2 style="margin: 0 0 1rem 0;">✨ Готовы начать?</h2>
-    <p style="font-size: 1.1rem; opacity: 0.9;">
-      Выберите руководство и настройте ваш идеальный хостинг
-    </p>
-    <div class="cta-buttons">
-      <a href="/guides/quickstart" class="btn btn-primary">🚀 Начать сейчас</a>
-      <a href="https://t.me/amnezia_hosting" class="btn btn-secondary">💬 Задать вопрос</a>
+  <!-- CTA БАННЕР -->
+  <div class="cta-pastel">
+    <h3>✨ Готовы начать?</h3>
+    <p style="opacity: 0.85;">Выберите руководство и настройте идеальный хостинг</p>
+    <div>
+      <a href="/docs/quickstart" class="btn-pastel-primary">🚀 Начать сейчас</a>
+      <a href="https://t.me/amnezia_hosting" class="btn-pastel-secondary">💬 Задать вопрос</a>
     </div>
   </div>
 

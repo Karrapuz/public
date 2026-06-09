@@ -3,10 +3,18 @@ import { defineConfig } from 'vitepress'
 export default defineConfig({
   title: '🚀 Amnezia Hosting Wiki',
   description: 'Современный хостинг с душой | 🌿 Безопасность · 🔥 Скорость · 💚 Поддержка',
+  
+  // РАЗРЕШАЕМ HTML в Markdown
+  markdown: {
+    html: true
+  },
+  
   head: [
     ['link', { rel: 'icon', href: '/favicon.ico' }],
-    ['meta', { name: 'theme-color', content: '#ff6b00' }]
+    ['meta', { name: 'theme-color', content: '#ff6b00' }],
+    ['meta', { name: 'viewport', content: 'width=device-width, initial-scale=1.0' }]
   ],
+  
   themeConfig: {
     logo: '/logo.svg',
     nav: [

@@ -1,7 +1,7 @@
 export default {
   title: "Моя Вики",
   description: "База знаний",
-  base: '/', // Оставляем косую черту для своего домена
+  base: '/public/', // Оставляем косую черту для своего домена
   themeConfig: {
     nav: [
       { text: 'Главная', link: '/' },
